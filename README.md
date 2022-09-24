@@ -1,8 +1,22 @@
 
 ![](git/Banner.png)
 
+# What is it 
 
-### Commands and flags ###
+grippy is a rip off of a personal engine i use to scrape google for days and days on end for things such as files, video formats, vulnerable servers and whatever i can think of. Recently i made my entire DB of books open to the public for a whole day and let people select files, well today i decided why not make a smaller more open sourced version of the engine i use day to day. Grippy is a search engine that searches for a certian file perfix and will download them to a given output file. For example if you were looking for books you can use a query such as `RTFM filetype:pdf` and the engine will search google for however long you tell it and when its done it will make a request to every single URL and decipher which URL is worth making the request to by matching the opted file prefix you are looking for within the URL. for example if you are searching for the following file prefix
+
+`*.pdf` and have the query `RTFM filetype:pdf` Grippy will search google, collect URL's, Save them to a JSOn file, and parse each and every one of them and see if the URL has the end extension `.pdf` if it does like the following `https://www.someurl.com/filetype.pdf` then it will download it to a given directory, if else it will trash the URL and not save the file. Using file and signature based verification gripper is easily able to filter out whats good and whats bad
+
+# features 
+
+* You can drop a list of queries 
+* Scrapes google based on a signature 
+* fast 
+* Simple 
+
+
+
+### Commands and flags and general usage ###
 
 ```
 Flag options:
@@ -37,3 +51,13 @@ Flag options:
 			Results       3:            go run main.go --format=(*.pdf) --verbose --output="/home/user/Desktop/File" --query="BTFM filetype:pdf" --results=900 --pages=1000
 
 ```
+
+# note 
+
+If you set the page count to high or let grippy scrape for too long the following will happen 
+
+![](git/Warning.png)
+
+the best way around this is to just not use the program for a full 24 hours.
+
+
